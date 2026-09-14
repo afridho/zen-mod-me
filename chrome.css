@@ -17,8 +17,11 @@
 	--pip-radius: 12px;
 }
 
+:root,
 body {
+	--player-bg-color: transparent !important;
 	background: transparent !important;
+	background-color: transparent !important;
 }
 
 .player-holder,
