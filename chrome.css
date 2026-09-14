@@ -1,9 +1,11 @@
 /* Zen Mod Me — Superellipse Corners */
 
 @media (-moz-bool-pref: "mod.zenmodme.enabled") {
-  :not(.no-squircles),
-  .zen-squircle-before::before,
-  .zen-squircle-after::after {
-    corner-shape: superellipse(var(--mod-zenmodme-curvature, 1.2)) !important;
+  @media (-moz-pref("layout.css.corner-shape.enabled")) {
+    *:not(.no-squircles),
+    .zen-squircle-before::before,
+    .zen-squircle-after::after {
+      corner-shape: superellipse(var(--mod-zenmodme-curvature, 1.2)) !important;
+    }
   }
 }
