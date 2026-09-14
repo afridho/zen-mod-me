@@ -14,16 +14,16 @@
 
 @media (-moz-bool-pref: "mod.zenmodme.pip.enabled") {
 
-/* PiP border radius */
-:root,
-body {
+/* PiP border radius — scoped to the PiP window only */
+html[windowtype="Toolkit:PictureInPicture"],
+html[windowtype="Toolkit:PictureInPicture"] body {
 	--player-bg-color: transparent !important;
 	background: transparent !important;
 	background-color: transparent !important;
 }
 
-.player-holder,
-#browser {
+html[windowtype="Toolkit:PictureInPicture"] .player-holder,
+html[windowtype="Toolkit:PictureInPicture"] #browser {
 	border-radius: var(--mod-zenmodme-pip-radius, 12px) !important;
 	overflow: hidden !important;
 }
