@@ -1,0 +1,15 @@
+[
+  {
+    "property": "mod.zenmodme.enabled",
+    "label": "Enable Superellipse Corners",
+    "type": "checkbox",
+    "defaultValue": true
+  },
+  {
+    "property": "mod.zenmodme.curvature",
+    "label": "Superellipse Curvature",
+    "type": "string",
+    "defaultValue": "1.2",
+    "placeholder": "e.g. 1.2"
+  }
+]
