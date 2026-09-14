@@ -4,6 +4,6 @@
   :not(.no-squircles),
   .zen-squircle-before::before,
   .zen-squircle-after::after {
-    corner-shape: superellipse(var(--mod-zenmodme-curvature, 1.2));
+    corner-shape: superellipse(var(--mod-zenmodme-curvature, 1.2)) !important;
   }
 }
