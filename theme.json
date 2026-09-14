@@ -1,22 +1,23 @@
 {
-  "id": "8f3c2d6e-1a9b-4f7e-8c52-6d0a4e91b738",
+  "id": "ZenModMe",
   "name": "Zen Mod Me",
   "description": "My personal Zen Browser mod.",
-  "homepage": "https://github.com/afridho/zen-mod-me",
-  "style": {
-    "chrome": "https://raw.githubusercontent.com/afridho/zen-mod-me/refs/heads/master/chrome.css"
-  },
-  "readme": "https://raw.githubusercontent.com/afridho/zen-mod-me/refs/heads/master/README.md",
-  "preferences": "https://raw.githubusercontent.com/afridho/zen-mod-me/refs/heads/master/preferences.json",
   "author": "afridho",
   "version": "1.0.0",
+  "homepage": "https://github.com/afridho/zen-mod-me",
+  "readme": "https://github.com/afridho/zen-mod-me/blob/master/README.md",
+  "style": {
+    "chrome": "chrome.css"
+  },
   "tags": [
-    "UI"
+    "sine",
+    "UI",
+    "afridho"
   ],
+  "preferences": "preferences.json",
   "createdAt": "2026-09-14",
   "updatedAt": "2026-09-14",
   "fork": [
-    "zen",
-    "firefox"
+    "zen"
   ]
 }
