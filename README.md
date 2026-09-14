@@ -1,4 +1,4 @@
-# Zen Mod Me — Superellipse Corners
+# Zen Mod Me
 
 Mod personal untuk [Zen Browser](https://zen-browser.app/) yang mengubah bentuk sudut UI menjadi superellipse agar tampak lebih halus.
 

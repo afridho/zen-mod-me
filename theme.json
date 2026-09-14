@@ -3,12 +3,12 @@
   "name": "Zen Mod Me",
   "description": "My personal Zen Browser mod.",
   "homepage": "https://github.com/afridho/zen-mod-me",
-  "image": "https://github.com/afridho/zen-mod-me/blob/main/image.png?raw=true",
+  "image": "https://github.com/afridho/zen-mod-me/blob/master/image.png?raw=true",
   "style": {
-    "chrome": "https://raw.githubusercontent.com/afridho/zen-mod-me/refs/heads/main/chrome.css"
+    "chrome": "https://raw.githubusercontent.com/afridho/zen-mod-me/refs/heads/master/chrome.css"
   },
-  "readme": "https://raw.githubusercontent.com/afridho/zen-mod-me/refs/heads/main/README.md",
-  "preferences": "https://raw.githubusercontent.com/afridho/zen-mod-me/refs/heads/main/preferences.json",
+  "readme": "https://raw.githubusercontent.com/afridho/zen-mod-me/refs/heads/master/README.md",
+  "preferences": "https://raw.githubusercontent.com/afridho/zen-mod-me/refs/heads/master/preferences.json",
   "author": "afridho",
   "version": "1.0.0",
   "tags": [
