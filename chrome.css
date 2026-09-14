@@ -10,29 +10,4 @@
   }
 }
 
-/* Selected-Tabs Theme */
-.tabbrowser-tab:is([selected], [visuallyselected], [multiselected])
-  .tab-background {
-  background-color: color-mix(
-    in srgb,
-    var(--identity-tab-color, var(--tab-group-color-gray-invert, light-dark(rgb(190, 190, 190), rgb(120, 120, 120)))) 15%,
-    transparent
-  ) !important;
-  border: 2.5px solid
-    color-mix(
-      in srgb,
-      var(--identity-tab-color, var(--tab-group-color-gray-invert, light-dark(rgb(190, 190, 190), rgb(120, 120, 120)))) 20%,
-      transparent
-    ) !important;
-  opacity: 0.8 !important;
-}
 
-.tabbrowser-tab:not([zen-essential]):is([selected], [visuallyselected], [multiselected])
-  .tab-background {
-  border-left: 32px solid
-    color-mix(
-      in srgb,
-      var(--identity-tab-color, var(--tab-group-color-gray-invert, light-dark(rgb(190, 190, 190), rgb(120, 120, 120)))) 20%,
-      transparent
-    ) !important;
-}
