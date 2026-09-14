@@ -3,7 +3,6 @@
   "name": "Zen Mod Me",
   "description": "My personal Zen Browser mod.",
   "homepage": "https://github.com/afridho/zen-mod-me",
-  "image": "https://github.com/afridho/zen-mod-me/blob/master/image.png?raw=true",
   "style": {
     "chrome": "https://raw.githubusercontent.com/afridho/zen-mod-me/refs/heads/master/chrome.css"
   },
