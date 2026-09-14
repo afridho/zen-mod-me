@@ -27,6 +27,6 @@
   },
   {
     "type": "text",
-    "label": "For the rounded PiP corners to appear transparent instead of black, open about:config and set browser.tabs.allow_transparent_browser to true, then restart Zen."
+    "label": "Open about:config and set browser.tabs.allow_transparent_browser to true, then restart Zen."
   }
 ]
