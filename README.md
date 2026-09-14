@@ -1,53 +1,77 @@
 # Zen Mod Me
 
-Mod personal untuk [Zen Browser](https://zen-browser.app/) yang mengubah bentuk sudut UI menjadi superellipse agar tampak lebih halus.
+Mod personal untuk [Zen Browser](https://zen-browser.app/). Berisi dua fitur:
 
-## Perubahan
+1. **Superellipse Corners** — mengubah bentuk sudut UI menjadi superellipse agar tampak lebih halus.
+2. **Custom Picture-in-Picture (PiP)** — merapikan jendela PiP dan membulatkan sudutnya.
 
-CSS utama yang diterapkan:
+## Fitur
+
+### Superellipse Corners
+
+Menerapkan `corner-shape: superellipse(...)` pada elemen ber-radius, dengan tingkat lengkung yang bisa diatur.
 
 ```css
-:not(.no-squircles),
+*:not(.no-squircles),
 .zen-squircle-before::before,
 .zen-squircle-after::after {
-  corner-shape: superellipse(1.2);
+  corner-shape: superellipse(var(--mod-zenmodme-curvature, 1.2)) !important;
 }
 ```
 
-Mod aktif secara default dan dapat dinonaktifkan melalui preferensi **Enable Superellipse Corners**.
+### Custom Picture-in-Picture
+
+Membulatkan sudut jendela PiP, membuat latarnya transparan, dan merapikan kontrol serta progress bar.
+
+## Preferensi
+
+Semua preferensi dapat diatur melalui pengaturan mod:
+
+- **Enable Superellipse Corners** — aktifkan/nonaktifkan sudut superellipse (default: aktif).
+- **Superellipse Curvature** — tingkat lengkung superellipse (default: `1.2`).
+- **Enable Custom Picture-in-Picture** — aktifkan/nonaktifkan styling PiP (default: aktif).
+- **Picture-in-Picture Corner Radius** — radius sudut PiP (default: `12px`).
+
+## Penting: aktifkan transparansi jendela
+
+Agar sudut PiP yang dibulatkan tampil transparan (bukan hitam), khususnya di Windows:
+
+1. Buka `about:config` di Zen.
+2. Cari `browser.tabs.allow_transparent_browser`.
+3. Set nilainya menjadi `true`.
+4. Restart Zen Browser.
+
+Tanpa langkah ini, area di luar radius PiP dapat tetap muncul sebagai warna solid (hitam).
 
 ## Struktur file
 
 - `chrome.css` — aturan CSS mod.
-- `preferences.json` — preferensi toggle untuk mengaktifkan atau menonaktifkan mod.
+- `preferences.json` — daftar preferensi mod.
 - `theme.json` — metadata mod dan referensi file.
 - `README.md` — dokumentasi ini.
 
 ## Instalasi
 
-### Dengan Zen Mods / Sine
+### Dengan Sine / Zen Mods
 
-1. Salin atau fork repository ini.
-2. Tambahkan repository tersebut ke pengelola mod yang Anda gunakan.
-3. Aktifkan **Zen Mod Me — Superellipse Corners**.
-4. Buka pengaturan mod dan pastikan **Enable Superellipse Corners** aktif.
-5. Restart Zen jika perubahan belum langsung terlihat.
+1. Buka pengaturan Sine di Zen.
+2. Masukkan slug repository: `afridho/zen-mod-me`.
+3. Klik Install, lalu restart Zen jika perlu.
+4. Buka pengaturan mod untuk menyesuaikan preferensi.
 
 ### Manual
 
 1. Buka folder profil Zen Browser.
-2. Pastikan fitur `toolkit.legacyUserProfileCustomizations.stylesheets` aktif di `about:config`.
+2. Aktifkan `toolkit.legacyUserProfileCustomizations.stylesheets` di `about:config`.
 3. Buat folder `chrome` jika belum ada.
-4. Salin isi `chrome.css` ke file `chrome/userChrome.css` pada profil Zen.
+4. Salin isi `chrome.css` ke `chrome/userChrome.css`.
 5. Restart Zen Browser.
 
-> Untuk instalasi manual, `preferences.json` dan `theme.json` tidak diperlukan; keduanya digunakan sebagai metadata dan pengaturan saat mod dipasang melalui pengelola mod.
+> Untuk instalasi manual, `preferences.json` dan `theme.json` tidak diperlukan; keduanya dipakai sebagai metadata dan pengaturan saat dipasang lewat pengelola mod. Preferensi berbasis `-moz-pref` hanya berlaku saat mod dipasang melalui Sine/Zen Mods.
 
 ## Catatan kompatibilitas
 
-`corner-shape` adalah properti CSS eksperimental. Jika versi Zen yang digunakan belum mendukungnya, deklarasi ini dapat diabaikan tanpa memengaruhi aturan sudut lainnya.
-
-Selector `.no-squircles` sengaja dikecualikan oleh selector `:not(.no-squircles)`.
+`corner-shape` adalah properti CSS eksperimental. Jika versi Zen belum mendukungnya, aturan superellipse diabaikan tanpa memengaruhi bagian lain. Selector `.no-squircles` sengaja dikecualikan.
 
 ## Lisensi
 

@@ -12,11 +12,9 @@
 
 /* Pimp yout PiP */
 
-/* PiP border radius */
-:root {
-	--pip-radius: 12px;
-}
+@media (-moz-bool-pref: "mod.zenmodme.pip.enabled") {
 
+/* PiP border radius */
 :root,
 body {
 	--player-bg-color: transparent !important;
@@ -26,7 +24,7 @@ body {
 
 .player-holder,
 #browser {
-	border-radius: var(--pip-radius) !important;
+	border-radius: var(--mod-zenmodme-pip-radius, 12px) !important;
 	overflow: hidden !important;
 }
 
@@ -114,3 +112,4 @@ transition: background-color 160ms linear;
 	}
 }
 
+} /* end mod.zenmodme.pip.enabled */

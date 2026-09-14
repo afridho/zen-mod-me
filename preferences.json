@@ -11,5 +11,22 @@
     "type": "string",
     "defaultValue": "1.2",
     "placeholder": "e.g. 1.2"
+  },
+  {
+    "property": "mod.zenmodme.pip.enabled",
+    "label": "Enable Custom Picture-in-Picture",
+    "type": "checkbox",
+    "defaultValue": true
+  },
+  {
+    "property": "mod.zenmodme.pip.radius",
+    "label": "Picture-in-Picture Corner Radius",
+    "type": "string",
+    "defaultValue": "12px",
+    "placeholder": "e.g. 12px"
+  },
+  {
+    "type": "text",
+    "label": "For the rounded PiP corners to appear transparent instead of black, open about:config and set browser.tabs.allow_transparent_browser to true, then restart Zen."
   }
 ]
