@@ -44,3 +44,12 @@ panelview .toolbarbutton-1,
 toolbarbutton.subviewbutton {
   border-radius: var(--arc-border-radius, 12px) !important;
 }
+
+/* Bleeding corners fix — clip content to the rounded inner radius */
+/* Source: https://github.com/zen-themes/bleeding-corners-fix */
+html:not([sizemode="fullscreen"]) {
+  .browserStack,
+  browser {
+    clip-path: inset(0 round var(--zen-native-inner-radius));
+  }
+}
