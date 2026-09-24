@@ -7,6 +7,21 @@
     .zen-squircle-after::after {
       corner-shape: superellipse(var(--mod-zenmodme-curvature, 1.2)) !important;
     }
+
+    /* Keep Essentials & pinned tab highlights on round corners.
+       Their .tab-background (and its ::before overlay) has a border-radius,
+       so the universal superellipse rule above distorts the highlight. */
+    .tabbrowser-tab[zen-essential="true"] .tab-background,
+    .tabbrowser-tab[zen-essential="true"] .tab-background::before,
+    .tabbrowser-tab[zen-essential="true"] .tab-background::after,
+    .zen-essentials-container .tab-background,
+    .zen-essentials-container .tab-background::before,
+    .zen-essentials-container .tab-background::after,
+    .tabbrowser-tab[pinned="true"] .tab-background,
+    .tabbrowser-tab[pinned="true"] .tab-background::before,
+    .tabbrowser-tab[pinned="true"] .tab-background::after {
+      corner-shape: round !important;
+    }
   }
 }
 
