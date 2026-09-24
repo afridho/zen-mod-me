@@ -82,6 +82,16 @@
   background-color: transparent !important;
 }
 
+/* Round the Arc menu button (PanelUI) */
+#PanelUI-menu-button {
+  border-radius: var(--arc-border-radius, 12px) !important;
+}
+
+#PanelUI-menu-button .toolbarbutton-badge-stack,
+#PanelUI-menu-button .toolbarbutton-icon {
+  border-radius: var(--arc-border-radius, 12px) !important;
+}
+
 toolbarbutton.zen-workspaces-actions {
   border-radius: var(--arc-border-radius, 12px);
   overflow: hidden;
