@@ -1,10 +1,63 @@
 /* Rounded Browser UI */
 
-.browser-container,
-.tab-background,
+/* Main window & browser container - only when not in fullscreen */
+:root:not([inDOMFullscreen="true"]) {
+  #zen-appcontent-wrapper,
+  #zen-tabbox-wrapper,
+  #tabbrowser-tabbox,
+  #tabbrowser-tabpanels,
+  #tabbrowser-tabpanels > .browserSidebarContainer,
+  .browserSidebarContainer:not([is-zen-split="true"]),
+  .browserSidebarContainer:not([is-zen-split="true"]) .browserContainer {
+    border-radius: var(--mod-zenmodme-browser-radius, 8px) !important;
+  }
+}
+
+/* Content panel smooth transition */
+:root:not([inDOMFullscreen="true"]) #tabbrowser-tabpanels > * {
+  border-radius: inherit !important;
+  transition: border-radius 0.18s linear !important;
+}
+
+/* Remove rounding in fullscreen mode */
+:root[inDOMFullscreen="true"] #tabbrowser-tabpanels,
+:root[inDOMFullscreen="true"] .browserSidebarContainer {
+  border-radius: 0 !important;
+}
+
+/* Toolbar & navigation */
+#titlebar::before,
+#titlebar,
+.zen-toolbar-background {
+  border-radius: var(--mod-zenmodme-browser-radius, 8px) !important;
+  
+  &::before,
+  &::after {
+    border-radius: var(--mod-zenmodme-browser-radius, 8px) !important;
+  }
+}
+
+/* Address bar */
+#urlbar[focused="true"],
+#urlbar[open] .urlbar-background,
+#urlbar-results,
+.urlbarView-row {
+  border-radius: var(--mod-zenmodme-browser-radius, 8px) !important;
+}
+
+/* Tabs & sidebar items */
 .tabbrowser-tab,
-.urlbar-icon-box,
-.urlbar-history-dropmarker,
-.search-one-offs > :not(#search-one-offs-dummy) {
+.tab-background,
+.toolbarbutton-1,
+.tab-icon-overlay {
+  border-radius: var(--mod-zenmodme-browser-radius, 8px) !important;
+}
+
+/* Menu & popup items */
+menuitem,
+menu,
+menucaption,
+panelview .toolbarbutton-1,
+toolbarbutton.subviewbutton {
   border-radius: var(--mod-zenmodme-browser-radius, 8px) !important;
 }
