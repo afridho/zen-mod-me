@@ -11,14 +11,11 @@
     /* Make essentials & pinned tabs highlight transparent (outline only) */
     .tabbrowser-tab[zen-essential="true"][visuallyselected] > .tab-stack > .tab-background::before {
       background: transparent !important;
-      border: 1px solid var(--zen-colors-secondary, rgba(255, 255, 255, 0.2)) !important;
-      border-radius: 6px !important;
+     
     }
 
     .tabbrowser-tab[pinned="true"][visuallyselected] > .tab-stack > .tab-background::before {
       background: transparent !important;
-      border: 1px solid var(--zen-colors-secondary, rgba(255, 255, 255, 0.2)) !important;
-      border-radius: 6px !important;
     }
   }
 }
