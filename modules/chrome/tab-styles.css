@@ -14,11 +14,8 @@
   }
 }
 
-/* Rounded Tabs - Always active, customizable radius */
-.tabbrowser-tab {
-  border-radius: var(--mod-zenmodme-tab-radius, 8px) !important;
-
-  & .tab-background {
-    border-radius: var(--mod-zenmodme-tab-radius, 8px) !important;
-  }
+/* Rounded Tabs - Set CSS variables in navigator-toolbox */
+#navigator-toolbox {
+  --border-radius-medium: var(--mod-zenmodme-tab-radius, 8px) !important;
+  --tab-border-radius: var(--mod-zenmodme-tab-radius, 8px) !important;
 }
