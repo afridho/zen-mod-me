@@ -38,11 +38,11 @@
       corner-shape: round !important;
     }
 
-    /* Tighten highlight border-radius on essentials & pinned tabs */
-    .tabbrowser-tab[zen-essential="true"] .tab-background,
-    .zen-essentials-container .tabbrowser-tab .tab-background,
-    .tabbrowser-tab[pinned="true"] .tab-background {
-      border-radius: 4px !important;
+    /* Make essentials & pinned tabs highlight more box-like (inspired by SuperPins) */
+    .tabbrowser-tab[zen-essential="true"] .tab-stack .tab-background,
+    .zen-essentials-container .tabbrowser-tab .tab-stack .tab-background,
+    .tabbrowser-tab[pinned="true"] .tab-stack .tab-background {
+      border-radius: 6px !important;
     }
   }
 }
