@@ -1,24 +1,21 @@
-/* Arc-2.0 Tab Features */
+/* === ARC-2.0 TAB FEATURES === */
 
 /* Faded Unloaded Tabs */
 @media -moz-pref("browser.tabs.fadeOutUnloadedTabs") {
   .tabbrowser-tab[pending="true"] {
-    opacity: 0.69 !important;
+    opacity: 0.69;
   }
 }
 
-/* Optional: Grayscale on faded tabs */
+/* Grayscale on Faded Tabs */
 @media -moz-pref("arc-grayscale-unloaded-tabs") {
   .tabbrowser-tab[pending="true"] {
-    filter: grayscale(1) !important;
+    filter: grayscale(1);
   }
 }
 
-/* Rounded Tabs - Use Arc-2.0's arc-border-radius property */
-.tabbrowser-tab {
-  border-radius: var(--arc-border-radius, 12px) !important;
-}
-
-.tab-background {
-  border-radius: var(--arc-border-radius, 12px) !important;
+/* Rounded Tabs - Set CSS variables */
+#navigator-toolbox {
+  --border-radius-medium: var(--arc-border-radius, 12px) !important;
+  --tab-border-radius: var(--arc-border-radius, 12px) !important;
 }

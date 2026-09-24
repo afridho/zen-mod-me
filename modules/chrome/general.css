@@ -1,10 +1,10 @@
-/* ===== ROOT CSS VARIABLES ===== */
-:root {
-  /* Browser UI radius - use Arc's standard variable */
-  --arc-border-radius: 12px;
-}
+/* === BORDER RADIUS === */
 
-/* Rounded Browser UI */
+/* Set CSS variables from Arc's border-radius preference */
+:root {
+  --zen-native-inner-radius: var(--arc-border-radius, 12px) !important;
+  --zen-webview-border-radius: var(--arc-border-radius, 12px) !important;
+}
 
 /* Main window & browser container - only when not in fullscreen */
 :root:not([inDOMFullscreen="true"]) {

@@ -1,14 +1,14 @@
 [
   {
     "type": "separator",
-    "label": "BROWSER UI"
+    "label": "ROUNDNESS"
   },
   {
-    "property": "mod.zenmodme.browser-radius",
-    "label": "Browser Elements Corner Radius",
+    "property": "arc-border-radius",
+    "label": "Custom border radius for various elements in Arc (enter value between 0px and 25px)",
     "type": "string",
-    "defaultValue": "8px",
-    "placeholder": "e.g. 8px"
+    "defaultValue": "12px",
+    "placeholder": "enter value between 0px and 25px"
   },
   {
     "type": "separator",
@@ -48,12 +48,5 @@
     "label": "Grayscale on Faded Tabs",
     "type": "checkbox",
     "defaultValue": false
-  },
-  {
-    "property": "arc-border-radius",
-    "label": "Border Radius for Various Elements",
-    "type": "string",
-    "defaultValue": "12px",
-    "placeholder": "enter value between 0px and 25px"
   }
 ]
