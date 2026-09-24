@@ -1,12 +1,19 @@
-/* === BORDER RADIUS === */
+/* === BORDER === */
 
-/* Set CSS variables from Arc's border-radius preference */
+/* SQUIRCLES & INNER RADIUS FIX */
 :root {
+  --zen-squircle-value: var(--arc-squircle, 1) !important;
   --zen-native-inner-radius: var(--arc-border-radius, 12px) !important;
   --zen-webview-border-radius: var(--arc-border-radius, 12px) !important;
 }
 
-/* Main window & browser container - only when not in fullscreen */
+/* Toolbar and navigation elements */
+#navigator-toolbox,
+#titlebar {
+  border-radius: var(--arc-border-radius, 12px) !important;
+}
+
+/* Content window / Webview border radius in all states */
 :root:not([inDOMFullscreen="true"]) {
   #zen-appcontent-wrapper,
   #zen-tabbox-wrapper,
@@ -19,44 +26,14 @@
   }
 }
 
-/* Content panel smooth transition */
 :root:not([inDOMFullscreen="true"]) #tabbrowser-tabpanels > * {
   border-radius: inherit !important;
   transition: border-radius 0.18s linear !important;
 }
 
-/* Remove rounding in fullscreen mode */
 :root[inDOMFullscreen="true"] #tabbrowser-tabpanels,
 :root[inDOMFullscreen="true"] .browserSidebarContainer {
   border-radius: 0 !important;
-}
-
-/* Toolbar & navigation */
-#titlebar::before,
-#titlebar,
-.zen-toolbar-background {
-  border-radius: var(--arc-border-radius, 12px) !important;
-  
-  &::before,
-  &::after {
-    border-radius: var(--arc-border-radius, 12px) !important;
-  }
-}
-
-/* Address bar */
-#urlbar[focused="true"],
-#urlbar[open] .urlbar-background,
-#urlbar-results,
-.urlbarView-row {
-  border-radius: var(--arc-border-radius, 12px) !important;
-}
-
-/* Tabs & sidebar items */
-.tabbrowser-tab,
-.tab-background,
-.toolbarbutton-1,
-.tab-icon-overlay {
-  border-radius: var(--arc-border-radius, 12px) !important;
 }
 
 /* Menu & popup items */

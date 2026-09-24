@@ -4,11 +4,30 @@
     "label": "ROUNDNESS"
   },
   {
-    "property": "arc-border-radius",
-    "label": "Custom border radius for various elements in Arc (enter value between 0px and 25px)",
     "type": "string",
+    "property": "arc-squircle",
+    "defaultValue": "1.1",
+    "placeholder": "1.1",
+    "label": "Custom roundness for *Squircles* (~enter value between 0.8 and 2, lower the value, more the roundness~)"
+  },
+  {
+    "type": "checkbox",
+    "property": "layout.css.corner-shape.enabled",
+    "label": "*Squircles* toggle (disable to enter custom border radius in `px` below)",
+    "defaultValue": false
+  },
+  {
+    "type": "string",
+    "label": "Custom *border radius* for various elements in Arc (~enter value between 0px and 25px~).",
+    "property": "arc-border-radius",
     "defaultValue": "12px",
-    "placeholder": "enter value between 0px and 25px"
+    "placeholder": "12px"
+  },
+  {
+    "type": "string",
+    "value": "number",
+    "label": "Edit Zen window margin width between web-view and border (~enter value between 0 to 12~).",
+    "property": "zen.theme.content-element-separation"
   },
   {
     "type": "separator",
@@ -25,28 +44,28 @@
     "label": "Picture-in-Picture Corner Radius",
     "type": "string",
     "defaultValue": "12px",
-    "placeholder": "e.g. 12px"
+    "placeholder": "12px"
   },
   {
     "type": "separator",
     "label": "ARC-2.0 FEATURES"
   },
   {
+    "type": "checkbox",
+    "label": "Enable *Arc Menu Icon*",
     "property": "arc-menu-icon",
-    "label": "Enable Arc Menu Icon",
-    "type": "checkbox",
     "defaultValue": false
   },
   {
+    "type": "checkbox",
+    "label": "Enable Unloaded Tabs to be *faded*.",
     "property": "browser.tabs.fadeOutUnloadedTabs",
-    "label": "Fade Unloaded Tabs",
-    "type": "checkbox",
     "defaultValue": false
   },
   {
-    "property": "arc-grayscale-unloaded-tabs",
-    "label": "Grayscale on Faded Tabs",
     "type": "checkbox",
+    "label": "Grayscale Unloaded Tabs (~won't work unless above pref is enabled~).",
+    "property": "arc-grayscale-unloaded-tabs",
     "defaultValue": false
   }
 ]
