@@ -14,8 +14,11 @@
   }
 }
 
-/* Rounded Tabs - Set CSS variables in navigator-toolbox */
-#navigator-toolbox {
-  --border-radius-medium: var(--mod-zenmodme-tab-radius, 8px) !important;
-  --tab-border-radius: var(--mod-zenmodme-tab-radius, 8px) !important;
+/* Rounded Tabs - Use Arc-2.0's arc-border-radius property */
+.tabbrowser-tab {
+  border-radius: var(--arc-border-radius, 12px) !important;
+}
+
+.tab-background {
+  border-radius: var(--arc-border-radius, 12px) !important;
 }

@@ -1,3 +1,9 @@
+/* ===== ROOT CSS VARIABLES ===== */
+:root {
+  /* Browser UI radius - use Arc's standard variable */
+  --arc-border-radius: 12px;
+}
+
 /* Rounded Browser UI */
 
 /* Main window & browser container - only when not in fullscreen */
@@ -9,7 +15,7 @@
   #tabbrowser-tabpanels > .browserSidebarContainer,
   .browserSidebarContainer:not([is-zen-split="true"]),
   .browserSidebarContainer:not([is-zen-split="true"]) .browserContainer {
-    border-radius: var(--mod-zenmodme-browser-radius, 8px) !important;
+    border-radius: var(--arc-border-radius, 12px) !important;
   }
 }
 
@@ -29,11 +35,11 @@
 #titlebar::before,
 #titlebar,
 .zen-toolbar-background {
-  border-radius: var(--mod-zenmodme-browser-radius, 8px) !important;
+  border-radius: var(--arc-border-radius, 12px) !important;
   
   &::before,
   &::after {
-    border-radius: var(--mod-zenmodme-browser-radius, 8px) !important;
+    border-radius: var(--arc-border-radius, 12px) !important;
   }
 }
 
@@ -42,7 +48,7 @@
 #urlbar[open] .urlbar-background,
 #urlbar-results,
 .urlbarView-row {
-  border-radius: var(--mod-zenmodme-browser-radius, 8px) !important;
+  border-radius: var(--arc-border-radius, 12px) !important;
 }
 
 /* Tabs & sidebar items */
@@ -50,7 +56,7 @@
 .tab-background,
 .toolbarbutton-1,
 .tab-icon-overlay {
-  border-radius: var(--mod-zenmodme-browser-radius, 8px) !important;
+  border-radius: var(--arc-border-radius, 12px) !important;
 }
 
 /* Menu & popup items */
@@ -59,5 +65,5 @@ menu,
 menucaption,
 panelview .toolbarbutton-1,
 toolbarbutton.subviewbutton {
-  border-radius: var(--mod-zenmodme-browser-radius, 8px) !important;
+  border-radius: var(--arc-border-radius, 12px) !important;
 }
