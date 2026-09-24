@@ -27,6 +27,16 @@
     .tabbrowser-tab[pinned="true"] *::after {
       corner-shape: round !important;
     }
+
+    /* Hide highlight on clicked/active essentials & pinned tabs */
+    .tabbrowser-tab[zen-essential="true"][visuallyselected] .tab-background,
+    .tabbrowser-tab[zen-essential="true"][visuallyselected] .tab-background::before,
+    .zen-essentials-container .tabbrowser-tab[visuallyselected] .tab-background,
+    .zen-essentials-container .tabbrowser-tab[visuallyselected] .tab-background::before,
+    .tabbrowser-tab[pinned="true"][visuallyselected] .tab-background,
+    .tabbrowser-tab[pinned="true"][visuallyselected] .tab-background::before {
+      display: none !important;
+    }
   }
 }
 
