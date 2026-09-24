@@ -17,8 +17,11 @@
   --tab-border-radius: var(--arc-border-radius, 12px) !important;
 }
 
-/* Neutral tab highlight - use default gray instead of primary (blue) color */
-.tabbrowser-tab:is([selected], [visuallyselected]) .tab-background {
+/* Neutral highlight for toolbar buttons - use default gray instead of primary (blue) */
+#PanelUI-menu-button:hover,
+#PanelUI-menu-button[open],
+.toolbarbutton-1:hover,
+.toolbarbutton-1[open] {
   background-color: light-dark(
     rgb(0 0 0 / 8%),
     rgb(255 255 255 / 10%)
