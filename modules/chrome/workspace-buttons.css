@@ -65,9 +65,21 @@
 
 @media not -moz-pref("zen.view.use-single-toolbar") {
   .zen-current-workspace-indicator {
-    margin-top: -8px;
+    margin-top: -1px;
     margin-bottom: 2px;
   }
+}
+
+/* Raise the sidebar foot buttons row */
+#navigator-toolbox[zen-sidebar-expanded="true"] #zen-sidebar-foot-buttons {
+  margin-bottom: 5px !important;
+}
+
+/* Remove the square highlight background on toolbar buttons hover/active */
+.toolbarbutton-1:hover,
+.toolbarbutton-1:hover:active,
+.toolbarbutton-1[open] {
+  background-color: transparent !important;
 }
 
 toolbarbutton.zen-workspaces-actions {
