@@ -8,18 +8,23 @@
       corner-shape: superellipse(var(--mod-zenmodme-curvature, 1.2)) !important;
     }
 
-    /* Keep Essentials & pinned tab highlights on round corners.
-       Their .tab-background (and its ::before overlay) has a border-radius,
-       so the universal superellipse rule above distorts the highlight. */
-    .tabbrowser-tab[zen-essential="true"] .tab-background,
-    .tabbrowser-tab[zen-essential="true"] .tab-background::before,
-    .tabbrowser-tab[zen-essential="true"] .tab-background::after,
-    .zen-essentials-container .tab-background,
-    .zen-essentials-container .tab-background::before,
-    .zen-essentials-container .tab-background::after,
-    .tabbrowser-tab[pinned="true"] .tab-background,
-    .tabbrowser-tab[pinned="true"] .tab-background::before,
-    .tabbrowser-tab[pinned="true"] .tab-background::after {
+    /* Keep Essentials & pinned tabs on round corners.
+       Their highlight can be drawn by the tab itself, .tab-stack,
+       .tab-content, or .tab-background (+ its ::before/::after overlay),
+       so we force the whole subtree back to round to avoid the universal
+       superellipse rule above distorting the highlight. */
+    .tabbrowser-tab[zen-essential="true"],
+    .tabbrowser-tab[zen-essential="true"] *,
+    .tabbrowser-tab[zen-essential="true"] *::before,
+    .tabbrowser-tab[zen-essential="true"] *::after,
+    .zen-essentials-container .tabbrowser-tab,
+    .zen-essentials-container .tabbrowser-tab *,
+    .zen-essentials-container .tabbrowser-tab *::before,
+    .zen-essentials-container .tabbrowser-tab *::after,
+    .tabbrowser-tab[pinned="true"],
+    .tabbrowser-tab[pinned="true"] *,
+    .tabbrowser-tab[pinned="true"] *::before,
+    .tabbrowser-tab[pinned="true"] *::after {
       corner-shape: round !important;
     }
   }

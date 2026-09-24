@@ -73,6 +73,33 @@ Tanpa langkah ini, area di luar radius PiP dapat tetap muncul sebagai warna soli
 
 `corner-shape` adalah properti CSS eksperimental. Jika versi Zen belum mendukungnya, aturan superellipse diabaikan tanpa memengaruhi bagian lain. Selector `.no-squircles` sengaja dikecualikan.
 
+## Development & Release
+
+### Publish & bump version
+
+Gunakan `publish.js` untuk otomatis bump versi dan push ke GitHub dengan satu command:
+
+```bash
+node publish.js
+```
+
+**Cara kerja versi:**
+- Minor version: 1.0 → 1.1 → 1.2 → ... → 1.99 → 1.100
+- Ketika minor mencapai 100, major naik: 1.100 → 2.0 (minor reset ke 0)
+- Repeat selamanya
+
+**Apa yang dilakukan:**
+1. Baca versi saat ini dari `theme.json`
+2. Bump minor (atau major jika minor = 100)
+3. Update `updatedAt` ke hari ini
+4. Commit dengan pesan `release: v<VERSION>`
+5. Push commit ke `origin/main`
+
+Contoh urutan release:
+```
+1.0 → 1.1 → 1.2 → ... → 1.99 → 1.100 → 2.0 → 2.1 → ...
+```
+
 ## Lisensi
 
 File-file dalam project ini mengikuti lisensi yang tercantum pada [`LICENSE`](LICENSE).
