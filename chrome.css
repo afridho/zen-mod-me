@@ -37,6 +37,13 @@
     .tabbrowser-tab[pinned="true"][visuallyselected] .tab-background::before {
       corner-shape: round !important;
     }
+
+    /* Tighten highlight border-radius on essentials & pinned tabs */
+    .tabbrowser-tab[zen-essential="true"] .tab-background,
+    .zen-essentials-container .tabbrowser-tab .tab-background,
+    .tabbrowser-tab[pinned="true"] .tab-background {
+      border-radius: 4px !important;
+    }
   }
 }
 
