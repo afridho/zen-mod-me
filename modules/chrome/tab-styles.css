@@ -14,10 +14,11 @@
   }
 }
 
-/* Rounded Tabs */
-@media -moz-pref("arc-rounded-tabs") {
-  .tabbrowser-tab,
-  .tab-background {
-    border-radius: var(--mod-zenmodme-browser-radius, 8px) !important;
+/* Rounded Tabs - Always active, customizable radius */
+.tabbrowser-tab {
+  border-radius: var(--mod-zenmodme-tab-radius, 8px) !important;
+
+  & .tab-background {
+    border-radius: var(--mod-zenmodme-tab-radius, 8px) !important;
   }
 }

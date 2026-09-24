@@ -50,9 +50,10 @@
     "defaultValue": false
   },
   {
-    "property": "arc-rounded-tabs",
-    "label": "Rounded Tabs",
-    "type": "checkbox",
-    "defaultValue": true
+    "property": "mod.zenmodme.tab-radius",
+    "label": "Tab Corner Radius",
+    "type": "string",
+    "defaultValue": "8px",
+    "placeholder": "e.g. 8px"
   }
 ]
