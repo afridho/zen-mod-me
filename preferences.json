@@ -1,5 +1,9 @@
 [
   {
+    "type": "separator",
+    "label": "SUPERELLIPSE CORNERS"
+  },
+  {
     "property": "mod.zenmodme.enabled",
     "label": "Enable Superellipse Corners",
     "type": "checkbox",
@@ -11,6 +15,10 @@
     "type": "string",
     "defaultValue": "1.2",
     "placeholder": "e.g. 1.2"
+  },
+  {
+    "type": "separator",
+    "label": "PICTURE-IN-PICTURE"
   },
   {
     "property": "mod.zenmodme.pip.enabled",
@@ -26,19 +34,23 @@
     "placeholder": "e.g. 12px"
   },
   {
-    "property": "mod.zenmodme.arc-menu-icon",
+    "type": "separator",
+    "label": "ARC-2.0 FEATURES"
+  },
+  {
+    "property": "arc-menu-icon",
     "label": "Enable Arc Menu Icon",
     "type": "checkbox",
     "defaultValue": false
   },
   {
-    "property": "mod.zenmodme.grayscale-unloaded-tabs",
-    "label": "Grayscale Faded Unloaded Tabs",
+    "property": "browser.tabs.fadeOutUnloadedTabs",
+    "label": "Fade Unloaded Tabs",
     "type": "checkbox",
     "defaultValue": false
   },
   {
-    "property": "mod.zenmodme.sidebar-radius",
+    "property": "arc-border-radius",
     "label": "Sidebar Items Corner Radius",
     "type": "string",
     "defaultValue": "8px",

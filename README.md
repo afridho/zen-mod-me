@@ -64,8 +64,13 @@ Tanpa langkah ini, fitur-fitur tertentu mungkin tidak berfungsi optimal.
 
 ## Struktur file
 
-- `chrome.css` — aturan CSS mod dengan fitur Arc-2.0.
-- `preferences.json` — daftar preferensi mod yang dapat disesuaikan.
+- `chrome.css` — main userChrome.css yang mengimport semua modul dari `modules/chrome/`
+- `modules/chrome/` — direktori berisi modul CSS:
+  - `general.css` — superellipse corners support
+  - `icons.css` — Arc menu icon
+  - `tab-styles.css` — faded unloaded tabs & rounded sidebar items
+  - `pip.css` — custom Picture-in-Picture styling
+- `preferences.json` — daftar preferensi mod yang dapat disesuaikan (Sine-compatible format).
 - `theme.json` — metadata mod dan referensi file.
 - `README.md` — dokumentasi ini.
 

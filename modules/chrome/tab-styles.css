@@ -1,0 +1,30 @@
+/* Tab Unload Style - Faded Unloaded Tabs */
+
+@media -moz-pref("browser.tabs.fadeOutUnloadedTabs") {
+  .tabbrowser-tab[pending="true"] {
+    opacity: 0.69 !important;
+  }
+}
+
+@media -moz-pref("arc-grayscale-unloaded-tabs") {
+  .tabbrowser-tab[pending="true"] {
+    filter: grayscale(1) !important;
+  }
+}
+
+/* Rounded Sidebar Items */
+
+.tabbrowser-tab {
+  border-radius: var(--arc-border-radius, 12px) !important;
+
+  & .tab-background {
+    border-radius: var(--arc-border-radius, 12px) !important;
+  }
+}
+
+#zen-sidebar {
+  .toolbarbutton-1,
+  .tab-icon-overlay {
+    border-radius: var(--arc-border-radius, 12px) !important;
+  }
+}

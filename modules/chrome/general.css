@@ -1,0 +1,8 @@
+/* General Arc-2.0 Features */
+
+/* Superellipse Corners Support */
+@media (-moz-bool-pref: "mod.zenmodme.enabled") {
+  * {
+    corner-shape: superellipse(var(--mod-zenmodme-curvature, 1.2)) !important;
+  }
+}
