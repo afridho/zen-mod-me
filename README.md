@@ -1,76 +1,65 @@
 # Zen Mod Me
 
-Mod personal untuk [Zen Browser](https://zen-browser.app/). Berisi fitur-fitur untuk styling UI dan Arc-2.0 integration:
-
-1. **Superellipse Corners** — mengubah bentuk sudut UI menjadi superellipse agar tampak lebih halus.
-2. **Custom Picture-in-Picture (PiP)** — merapikan jendela PiP dan membulatkan sudutnya.
-3. **Arc Menu Icon** — menampilkan Arc icon pada hamburger menu (diambil dari Arc-2.0).
-4. **Faded Unloaded Tabs** — fade effect pada tab yang belum dimuat.
-5. **Rounded Sidebar Items** — membulatkan sudut item-item di sidebar.
+Mod personal untuk [Zen Browser](https://zen-browser.app/), berbasis fitur-fitur dari [Arc-2.0](https://github.com/YashjitPal/Arc-2.0) theme. Fokus pada styling UI: rounded corners, custom Picture-in-Picture, Arc menu icon, faded tabs, dan animasi workspace icon.
 
 ## Fitur
 
-### Superellipse Corners
-
-Menerapkan `corner-shape: superellipse(...)` pada elemen ber-radius, dengan tingkat lengkung yang bisa diatur.
-
-```css
-*:not(.no-squircles),
-.zen-squircle-before::before,
-.zen-squircle-after::after {
-  corner-shape: superellipse(var(--mod-zenmodme-curvature, 1.2)) !important;
-}
-```
-
-### Custom Picture-in-Picture
-
-Membulatkan sudut jendela PiP, membuat latarnya transparan, dan merapikan kontrol serta progress bar.
-
-### Arc Menu Icon
-
-Menampilkan Arc icon yang lebih indah pada menu button, terinspirasi dari Arc Browser dan Arc-2.0 theme.
-
-### Faded Unloaded Tabs
-
-Membuat tab yang belum dimuat (pending) tampak lebih fade/transparan. Opsional dengan grayscale effect.
-
-### Rounded Sidebar Items
-
-Membulatkan sudut pada item-item sidebar untuk tampilan yang lebih rapi dan konsisten.
+1. **Roundness & Corners** — atur roundness squircle atau border radius manual (`px`) untuk elemen UI dan web page area secara terpisah.
+2. **Custom Picture-in-Picture (PiP)** — membulatkan sudut jendela PiP, latar transparan, dan merapikan kontrol serta progress bar.
+3. **Arc Menu Icon** — menampilkan Arc icon pada hamburger menu button.
+4. **Faded Unloaded Tabs** — fade effect pada tab yang belum dimuat, opsional dengan grayscale.
+5. **Workspace Icon Animation** — animasi ala macOS dock pada workspace indicator di bawah sidebar.
 
 ## Preferensi
 
-Semua preferensi dapat diatur melalui pengaturan mod:
+Semua preferensi dapat diatur melalui pengaturan mod (Sine / Zen Mods).
 
-- **Enable Superellipse Corners** — aktifkan/nonaktifkan sudut superellipse (default: aktif).
-- **Superellipse Curvature** — tingkat lengkung superellipse (default: `1.2`).
-- **Enable Custom Picture-in-Picture** — aktifkan/nonaktifkan styling PiP (default: aktif).
-- **Picture-in-Picture Corner Radius** — radius sudut PiP (default: `12px`).
-- **Enable Arc Menu Icon** — aktifkan Arc icon pada menu button (default: nonaktif).
-- **Grayscale Faded Unloaded Tabs** — tambahkan grayscale pada tab yang fade (default: nonaktif).
-- **Sidebar Items Corner Radius** — radius sudut item sidebar (default: `8px`).
+### Roundness & Corners
 
-## Penting: aktifkan fitur-fitur required
+- **Squircle roundness** — tingkat lengkung squircle (0.8–2, lebih kecil = lebih bulat). Default: `1.1`.
+- **Use squircle corners** — toggle squircle; nonaktifkan untuk pakai border radius `px` di bawah.
+- **UI corner radius** — radius sudut toolbar, tabs, dan menu (0px–25px). Default: `12px`.
+- **Web page corner radius** — radius sudut area konten/web page (0px–25px). Default: `12px`.
+- **Window margin** — jarak antara web page dan tepi browser (0–12).
 
-### Untuk transparansi dan unloaded tabs fade:
+### Picture-in-Picture
 
-1. Buka `about:config` di Zen.
-2. Cari dan set:
-   - `browser.tabs.allow_transparent_browser` → `true` (untuk transparansi PiP)
-   - `browser.tabs.fadeOutUnloadedTabs` → `true` (untuk fade effect unloaded tabs)
-3. Restart Zen Browser.
+- **Enable custom PiP** — aktifkan/nonaktifkan styling PiP. Default: aktif.
+- **PiP corner radius** — radius sudut jendela PiP. Default: `12px`.
 
-Tanpa langkah ini, fitur-fitur tertentu mungkin tidak berfungsi optimal.
+### Tabs & Icons
+
+- **Arc menu icon** — tampilkan Arc icon pada hamburger button. Default: nonaktif.
+- **Fade unloaded tabs** — buat tab yang belum dimuat tampak fade. Default: nonaktif.
+- **Grayscale unloaded tabs** — tambah grayscale pada tab yang fade (butuh fade aktif). Default: nonaktif.
+
+### Workspace
+
+- **Workspace icon animation style** — gaya animasi workspace indicator:
+  - `No background` — tanpa background (minimal, ada indicator dot).
+  - `No animation` — background default tanpa animasi.
+  - `Capsule background` — background capsule dengan animasi.
+  - `Disable` — nonaktifkan styling.
+
+## Penting: aktifkan pref bawaan Zen
+
+Beberapa fitur butuh pref bawaan Zen diaktifkan lewat `about:config`:
+
+- `browser.tabs.allow_transparent_browser` → `true` (transparansi PiP)
+- `browser.tabs.fadeOutUnloadedTabs` → `true` (fade unloaded tabs)
+
+Restart Zen setelahnya.
 
 ## Struktur file
 
-- `chrome.css` — main userChrome.css yang mengimport semua modul dari `modules/chrome/`
-- `modules/chrome/` — direktori berisi modul CSS:
-  - `general.css` — superellipse corners support
-  - `icons.css` — Arc menu icon
-  - `tab-styles.css` — faded unloaded tabs & rounded sidebar items
-  - `pip.css` — custom Picture-in-Picture styling
-- `preferences.json` — daftar preferensi mod yang dapat disesuaikan (Sine-compatible format).
+- `chrome.css` — entry point yang mengimport semua modul dari `modules/chrome/`.
+- `modules/chrome/`:
+  - `general.css` — border radius untuk browser UI & web page (squircle + native radius vars).
+  - `icons.css` — Arc menu icon.
+  - `tab-styles.css` — faded unloaded tabs & tab border radius.
+  - `workspace-buttons.css` — styling & animasi workspace indicator.
+  - `pip.css` — custom Picture-in-Picture styling.
+- `preferences.json` — daftar preferensi mod (format Sine-compatible).
 - `theme.json` — metadata mod dan referensi file.
 - `README.md` — dokumentasi ini.
 
@@ -87,25 +76,14 @@ Tanpa langkah ini, fitur-fitur tertentu mungkin tidak berfungsi optimal.
 
 1. Buka folder profil Zen Browser.
 2. Aktifkan `toolkit.legacyUserProfileCustomizations.stylesheets` di `about:config`.
-3. Buat folder `chrome` jika belum ada.
-4. Salin isi `chrome.css` ke `chrome/userChrome.css`.
-5. Restart Zen Browser.
+3. Buat folder `chrome` jika belum ada, lalu salin `chrome.css` dan folder `modules/` ke dalamnya sebagai `chrome/userChrome.css` beserta modulnya.
+4. Restart Zen Browser.
 
 > Untuk instalasi manual, `preferences.json` dan `theme.json` tidak diperlukan; keduanya dipakai sebagai metadata dan pengaturan saat dipasang lewat pengelola mod. Preferensi berbasis `-moz-pref` hanya berlaku saat mod dipasang melalui Sine/Zen Mods.
 
-## Catatan Implementasi Arc-2.0
+## Catatan Implementasi
 
-Beberapa fitur diambil dari [Arc-2.0](https://github.com/YashjitPal/Arc-2.0) theme:
-
-- **Arc Menu Icon**: SVG icon dari Arc-2.0 yang lebih elegan
-- **Faded Tabs**: Media query berbasis `browser.tabs.fadeOutUnloadedTabs` untuk fade effect
-- **Rounded Items**: Menggunakan CSS custom properties untuk radius yang fleksibel
-
-Fitur-fitur ini terintegrasi dengan preferensi Zen Mod Me untuk memudahkan kustomisasi.
-
-## Catatan kompatibilitas
-
-`corner-shape` adalah properti CSS eksperimental. Jika versi Zen belum mendukungnya, aturan superellipse diabaikan tanpa memengaruhi bagian lain. Selector `.no-squircles` sengaja dikecualikan.
+Fitur-fitur di-porting dari [Arc-2.0](https://github.com/YashjitPal/Arc-2.0) theme, menggunakan media query `@media -moz-pref("...")` dan CSS variable `--arc-border-radius` agar kompatibel dengan sistem preferensi Sine.
 
 ## Development & Release
 
@@ -120,7 +98,6 @@ node publish.js
 **Cara kerja versi:**
 - Minor version: 1.0 → 1.1 → 1.2 → ... → 1.99 → 1.100
 - Ketika minor mencapai 100, major naik: 1.100 → 2.0 (minor reset ke 0)
-- Repeat selamanya
 
 **Apa yang dilakukan:**
 1. Baca versi saat ini dari `theme.json`
@@ -129,12 +106,6 @@ node publish.js
 4. Commit dengan pesan `release: v<VERSION>`
 5. Push commit ke `origin/main`
 
-Contoh urutan release:
-```
-1.0 → 1.1 → 1.2 → ... → 1.99 → 1.100 → 2.0 → 2.1 → ...
-```
-
 ## Lisensi
 
 File-file dalam project ini mengikuti lisensi yang tercantum pada [`LICENSE`](LICENSE).
-
