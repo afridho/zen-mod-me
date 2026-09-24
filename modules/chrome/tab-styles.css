@@ -15,16 +15,16 @@
 /* Rounded Sidebar Items */
 
 .tabbrowser-tab {
-  border-radius: var(--arc-border-radius, 12px) !important;
+  border-radius: var(--mod-zenmodme-browser-radius, 8px) !important;
 
   & .tab-background {
-    border-radius: var(--arc-border-radius, 12px) !important;
+    border-radius: var(--mod-zenmodme-browser-radius, 8px) !important;
   }
 }
 
 #zen-sidebar {
   .toolbarbutton-1,
   .tab-icon-overlay {
-    border-radius: var(--arc-border-radius, 12px) !important;
+    border-radius: var(--mod-zenmodme-browser-radius, 8px) !important;
   }
 }

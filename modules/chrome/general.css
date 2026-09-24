@@ -1,8 +1,10 @@
-/* General Arc-2.0 Features */
+/* Rounded Browser UI */
 
-/* Superellipse Corners Support */
-@media (-moz-bool-pref: "mod.zenmodme.enabled") {
-  * {
-    corner-shape: superellipse(var(--mod-zenmodme-curvature, 1.2)) !important;
-  }
+.browser-container,
+.tab-background,
+.tabbrowser-tab,
+.urlbar-icon-box,
+.urlbar-history-dropmarker,
+.search-one-offs > :not(#search-one-offs-dummy) {
+  border-radius: var(--mod-zenmodme-browser-radius, 8px) !important;
 }

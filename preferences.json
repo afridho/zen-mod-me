@@ -1,20 +1,14 @@
 [
   {
     "type": "separator",
-    "label": "SUPERELLIPSE CORNERS"
+    "label": "BROWSER UI"
   },
   {
-    "property": "mod.zenmodme.enabled",
-    "label": "Enable Superellipse Corners",
-    "type": "checkbox",
-    "defaultValue": true
-  },
-  {
-    "property": "mod.zenmodme.curvature",
-    "label": "Superellipse Curvature",
+    "property": "mod.zenmodme.browser-radius",
+    "label": "Browser Elements Corner Radius",
     "type": "string",
-    "defaultValue": "1.2",
-    "placeholder": "e.g. 1.2"
+    "defaultValue": "8px",
+    "placeholder": "e.g. 8px"
   },
   {
     "type": "separator",
@@ -48,12 +42,5 @@
     "label": "Fade Unloaded Tabs",
     "type": "checkbox",
     "defaultValue": false
-  },
-  {
-    "property": "arc-border-radius",
-    "label": "Sidebar Items Corner Radius",
-    "type": "string",
-    "defaultValue": "8px",
-    "placeholder": "e.g. 8px"
   }
 ]
