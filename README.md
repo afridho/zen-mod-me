@@ -1,9 +1,12 @@
 # Zen Mod Me
 
-Mod personal untuk [Zen Browser](https://zen-browser.app/). Berisi dua fitur:
+Mod personal untuk [Zen Browser](https://zen-browser.app/). Berisi fitur-fitur untuk styling UI dan Arc-2.0 integration:
 
 1. **Superellipse Corners** — mengubah bentuk sudut UI menjadi superellipse agar tampak lebih halus.
 2. **Custom Picture-in-Picture (PiP)** — merapikan jendela PiP dan membulatkan sudutnya.
+3. **Arc Menu Icon** — menampilkan Arc icon pada hamburger menu (diambil dari Arc-2.0).
+4. **Faded Unloaded Tabs** — fade effect pada tab yang belum dimuat.
+5. **Rounded Sidebar Items** — membulatkan sudut item-item di sidebar.
 
 ## Fitur
 
@@ -23,6 +26,18 @@ Menerapkan `corner-shape: superellipse(...)` pada elemen ber-radius, dengan ting
 
 Membulatkan sudut jendela PiP, membuat latarnya transparan, dan merapikan kontrol serta progress bar.
 
+### Arc Menu Icon
+
+Menampilkan Arc icon yang lebih indah pada menu button, terinspirasi dari Arc Browser dan Arc-2.0 theme.
+
+### Faded Unloaded Tabs
+
+Membuat tab yang belum dimuat (pending) tampak lebih fade/transparan. Opsional dengan grayscale effect.
+
+### Rounded Sidebar Items
+
+Membulatkan sudut pada item-item sidebar untuk tampilan yang lebih rapi dan konsisten.
+
 ## Preferensi
 
 Semua preferensi dapat diatur melalui pengaturan mod:
@@ -31,22 +46,26 @@ Semua preferensi dapat diatur melalui pengaturan mod:
 - **Superellipse Curvature** — tingkat lengkung superellipse (default: `1.2`).
 - **Enable Custom Picture-in-Picture** — aktifkan/nonaktifkan styling PiP (default: aktif).
 - **Picture-in-Picture Corner Radius** — radius sudut PiP (default: `12px`).
+- **Enable Arc Menu Icon** — aktifkan Arc icon pada menu button (default: nonaktif).
+- **Grayscale Faded Unloaded Tabs** — tambahkan grayscale pada tab yang fade (default: nonaktif).
+- **Sidebar Items Corner Radius** — radius sudut item sidebar (default: `8px`).
 
-## Penting: aktifkan transparansi jendela
+## Penting: aktifkan fitur-fitur required
 
-Agar sudut PiP yang dibulatkan tampil transparan (bukan hitam), khususnya di Windows:
+### Untuk transparansi dan unloaded tabs fade:
 
 1. Buka `about:config` di Zen.
-2. Cari `browser.tabs.allow_transparent_browser`.
-3. Set nilainya menjadi `true`.
-4. Restart Zen Browser.
+2. Cari dan set:
+   - `browser.tabs.allow_transparent_browser` → `true` (untuk transparansi PiP)
+   - `browser.tabs.fadeOutUnloadedTabs` → `true` (untuk fade effect unloaded tabs)
+3. Restart Zen Browser.
 
-Tanpa langkah ini, area di luar radius PiP dapat tetap muncul sebagai warna solid (hitam).
+Tanpa langkah ini, fitur-fitur tertentu mungkin tidak berfungsi optimal.
 
 ## Struktur file
 
-- `chrome.css` — aturan CSS mod.
-- `preferences.json` — daftar preferensi mod.
+- `chrome.css` — aturan CSS mod dengan fitur Arc-2.0.
+- `preferences.json` — daftar preferensi mod yang dapat disesuaikan.
 - `theme.json` — metadata mod dan referensi file.
 - `README.md` — dokumentasi ini.
 
@@ -68,6 +87,16 @@ Tanpa langkah ini, area di luar radius PiP dapat tetap muncul sebagai warna soli
 5. Restart Zen Browser.
 
 > Untuk instalasi manual, `preferences.json` dan `theme.json` tidak diperlukan; keduanya dipakai sebagai metadata dan pengaturan saat dipasang lewat pengelola mod. Preferensi berbasis `-moz-pref` hanya berlaku saat mod dipasang melalui Sine/Zen Mods.
+
+## Catatan Implementasi Arc-2.0
+
+Beberapa fitur diambil dari [Arc-2.0](https://github.com/YashjitPal/Arc-2.0) theme:
+
+- **Arc Menu Icon**: SVG icon dari Arc-2.0 yang lebih elegan
+- **Faded Tabs**: Media query berbasis `browser.tabs.fadeOutUnloadedTabs` untuk fade effect
+- **Rounded Items**: Menggunakan CSS custom properties untuk radius yang fleksibel
+
+Fitur-fitur ini terintegrasi dengan preferensi Zen Mod Me untuk memudahkan kustomisasi.
 
 ## Catatan kompatibilitas
 
@@ -103,3 +132,4 @@ Contoh urutan release:
 ## Lisensi
 
 File-file dalam project ini mengikuti lisensi yang tercantum pada [`LICENSE`](LICENSE).
+

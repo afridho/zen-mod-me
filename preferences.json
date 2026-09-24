@@ -1,17 +1,5 @@
 [
-  {
-    "property": "mod.zenmodme.enabled",
-    "label": "Enable Superellipse Corners",
-    "type": "checkbox",
-    "defaultValue": true
-  },
-  {
-    "property": "mod.zenmodme.curvature",
-    "label": "Superellipse Curvature",
-    "type": "string",
-    "defaultValue": "1.2",
-    "placeholder": "e.g. 1.2"
-  },
+
   {
     "property": "mod.zenmodme.pip.enabled",
     "label": "Enable Custom Picture-in-Picture",
@@ -26,7 +14,42 @@
     "placeholder": "e.g. 12px"
   },
   {
+    "property": "mod.zenmodme.arc-menu-icon",
+    "label": "Enable Arc Menu Icon",
+    "type": "checkbox",
+    "defaultValue": false
+  },
+  {
+    "property": "mod.zenmodme.grayscale-unloaded-tabs",
+    "label": "Grayscale Faded Unloaded Tabs",
+    "type": "checkbox",
+    "defaultValue": false
+  },
+  {
+    "property": "mod.zenmodme.sidebar-radius",
+    "label": "Sidebar Items Corner Radius",
+    "type": "string",
+    "defaultValue": "8px",
+    "placeholder": "e.g. 8px"
+  },
+  {
     "type": "text",
-    "label": "Open about:config and set browser.tabs.allow_transparent_browser to true, then restart Zen."
+    "label": "Arc-2.0 Features"
+  },
+  {
+    "type": "text",
+    "label": "Open about:config and set:"
+  },
+  {
+    "type": "text",
+    "label": "• browser.tabs.allow_transparent_browser → true"
+  },
+  {
+    "type": "text",
+    "label": "• browser.tabs.fadeOutUnloadedTabs → true (for faded unloaded tabs)"
+  },
+  {
+    "type": "text",
+    "label": "Then restart Zen browser."
   }
 ]
