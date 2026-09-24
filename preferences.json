@@ -76,6 +76,12 @@
     "defaultValue": false
   },
   {
+    "type": "checkbox",
+    "label": "*Fade* inactive normal tabs (~only the active tab stays fully visible; pinned & essentials untouched~).",
+    "property": "mod.zenmodme.fade-inactive-tabs",
+    "defaultValue": false
+  },
+  {
     "type": "separator",
     "label": "WORKSPACE"
   },

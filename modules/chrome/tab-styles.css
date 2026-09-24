@@ -11,6 +11,28 @@
   }
 }
 
+/* Fade inactive normal tabs (excludes pinned & essentials) */
+@media -moz-pref("mod.zenmodme.fade-inactive-tabs") {
+  .tabbrowser-tab:not(
+    [selected],
+    [visuallyselected],
+    [pinned],
+    [zen-essential="true"]
+  ) {
+    opacity: 0.55;
+    transition: opacity 0.2s ease-out;
+  }
+
+  .tabbrowser-tab:not(
+    [selected],
+    [visuallyselected],
+    [pinned],
+    [zen-essential="true"]
+  ):hover {
+    opacity: 1;
+  }
+}
+
 /* Rounded Tabs - Use same border-radius as browser */
 #navigator-toolbox {
   --border-radius-medium: var(--arc-border-radius, 12px) !important;
