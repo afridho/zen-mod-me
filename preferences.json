@@ -42,5 +42,17 @@
     "label": "Fade Unloaded Tabs",
     "type": "checkbox",
     "defaultValue": false
+  },
+  {
+    "property": "arc-grayscale-unloaded-tabs",
+    "label": "Grayscale on Faded Tabs",
+    "type": "checkbox",
+    "defaultValue": false
+  },
+  {
+    "property": "arc-rounded-tabs",
+    "label": "Rounded Tabs",
+    "type": "checkbox",
+    "defaultValue": true
   }
 ]
