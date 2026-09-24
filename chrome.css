@@ -8,41 +8,11 @@
       corner-shape: superellipse(var(--mod-zenmodme-curvature, 1.2)) !important;
     }
 
-    /* Keep Essentials & pinned tabs on round corners.
-       Their highlight can be drawn by the tab itself, .tab-stack,
-       .tab-content, or .tab-background (+ its ::before/::after overlay),
-       so we force the whole subtree back to round to avoid the universal
-       superellipse rule above distorting the highlight. */
-    .tabbrowser-tab[zen-essential="true"],
-    .tabbrowser-tab[zen-essential="true"] *,
-    .tabbrowser-tab[zen-essential="true"] *::before,
-    .tabbrowser-tab[zen-essential="true"] *::after,
-    .zen-essentials-container .tabbrowser-tab,
-    .zen-essentials-container .tabbrowser-tab *,
-    .zen-essentials-container .tabbrowser-tab *::before,
-    .zen-essentials-container .tabbrowser-tab *::after,
-    .tabbrowser-tab[pinned="true"],
-    .tabbrowser-tab[pinned="true"] *,
-    .tabbrowser-tab[pinned="true"] *::before,
-    .tabbrowser-tab[pinned="true"] *::after {
-      corner-shape: round !important;
-    }
-
-    /* Ensure active/clicked state also uses round corners (not superellipse) */
-    .tabbrowser-tab[zen-essential="true"][visuallyselected] .tab-background,
-    .tabbrowser-tab[zen-essential="true"][visuallyselected] .tab-background::before,
-    .zen-essentials-container .tabbrowser-tab[visuallyselected] .tab-background,
-    .zen-essentials-container .tabbrowser-tab[visuallyselected] .tab-background::before,
-    .tabbrowser-tab[pinned="true"][visuallyselected] .tab-background,
-    .tabbrowser-tab[pinned="true"][visuallyselected] .tab-background::before {
-      corner-shape: round !important;
-    }
-
-    /* Make essentials & pinned tabs highlight more box-like (inspired by SuperPins) */
+    /* Make essentials & pinned tabs highlight transparent */
     .tabbrowser-tab[zen-essential="true"] .tab-stack .tab-background,
     .zen-essentials-container .tabbrowser-tab .tab-stack .tab-background,
     .tabbrowser-tab[pinned="true"] .tab-stack .tab-background {
-      border-radius: 6px !important;
+      background-color: transparent !important;
     }
   }
 }
