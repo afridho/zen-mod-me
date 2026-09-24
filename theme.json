@@ -3,7 +3,7 @@
   "name": "Zen Mod Me",
   "description": "My personal Zen Browser mod.",
   "author": "afridho",
-  "version": "1.1",
+  "version": "1.2",
   "homepage": "https://github.com/afridho/zen-mod-me",
   "readme": "https://github.com/afridho/zen-mod-me/blob/main/README.md",
   "style": {
@@ -16,7 +16,7 @@
   ],
   "preferences": "preferences.json",
   "createdAt": "2026-09-14",
-  "updatedAt": "2026-09-14",
+  "updatedAt": "2026-09-24",
   "fork": [
     "zen"
   ]
