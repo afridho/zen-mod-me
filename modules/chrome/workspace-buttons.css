@@ -65,7 +65,7 @@
 
 @media not -moz-pref("zen.view.use-single-toolbar") {
   .zen-current-workspace-indicator {
-    margin-top: -1px;
+    margin-top: -8px;
     margin-bottom: 2px;
   }
 }
@@ -76,15 +76,12 @@ toolbarbutton.zen-workspaces-actions {
 }
 
 .zen-current-workspace-indicator::before {
-  background-color: light-dark(
-    rgb(0 0 0 / 5%),
-    rgb(255 255 255 / 5%)
-  ) !important;
+  background-color: transparent !important;
   border-radius: var(--arc-border-radius, 12px) !important;
 }
 
 .zen-current-workspace-indicator:hover::before {
-  background: light-dark(rgb(0 0 0 / 10%), rgb(255 255 255 / 10%)) !important;
+  background: transparent !important;
   border-radius: var(--arc-border-radius, 12px) !important;
   z-index: -1 !important;
 }
