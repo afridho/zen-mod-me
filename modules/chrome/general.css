@@ -4,7 +4,7 @@
 :root {
   --zen-squircle-value: var(--arc-squircle, 1) !important;
   --zen-native-inner-radius: var(--arc-border-radius, 12px) !important;
-  --zen-webview-border-radius: var(--arc-border-radius, 12px) !important;
+  --zen-webview-border-radius: var(--mod-zenmodme-webview-radius, 12px) !important;
 }
 
 /* Toolbar and navigation elements */
@@ -22,7 +22,7 @@
   #tabbrowser-tabpanels > .browserSidebarContainer,
   .browserSidebarContainer:not([is-zen-split="true"]),
   .browserSidebarContainer:not([is-zen-split="true"]) .browserContainer {
-    border-radius: var(--arc-border-radius, 12px) !important;
+    border-radius: var(--mod-zenmodme-webview-radius, 12px) !important;
   }
 }
 
