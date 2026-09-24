@@ -7,13 +7,6 @@
     .zen-squircle-after::after {
       corner-shape: superellipse(var(--mod-zenmodme-curvature, 1.2)) !important;
     }
-
-    /* Make essentials & pinned tabs highlight transparent only when active/clicked */
-    .tabbrowser-tab[zen-essential="true"][visuallyselected] .tab-stack .tab-background,
-    .zen-essentials-container .tabbrowser-tab[visuallyselected] .tab-stack .tab-background,
-    .tabbrowser-tab[pinned="true"][visuallyselected] .tab-stack .tab-background {
-      background-color: transparent !important;
-    }
   }
 }
 
