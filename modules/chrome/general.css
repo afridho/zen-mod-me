@@ -1,3 +1,13 @@
+/* === PWA / TASKBAR TAB === */
+
+/* Hide browser chrome only in PWA / Taskbar Tab windows */
+:root[taskbartab] #navigator-toolbox,
+:root[taskbartab] #zen-sidebar-splitter {
+  display: none !important;
+  visibility: collapse !important;
+  pointer-events: none !important;
+}
+
 /* === BORDER === */
 
 /* SQUIRCLES & INNER RADIUS FIX */
