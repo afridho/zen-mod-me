@@ -1,6 +1,11 @@
-/* Hide browser update popups without disabling update checks or installs. */
+/* Hide browser update popups and badges without disabling checks or installs. */
 @media -moz-pref("mod.zenmodme.hide-update-notifications") {
   [id^="appMenu-update-"][id$="-notification"] {
+    display: none !important;
+  }
+
+  /* The menu badge is separate from the update notification popup. */
+  #PanelUI-menu-button[badge-status^="update-"] .toolbarbutton-badge {
     display: none !important;
   }
 }

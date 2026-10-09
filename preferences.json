@@ -87,7 +87,7 @@
   },
   {
     "type": "checkbox",
-    "label": "Hide *update notifications* (~update checks & installation stay enabled~).",
+    "label": "Hide *update notifications & menu badge* (~update checks & installation stay enabled~).",
     "property": "mod.zenmodme.hide-update-notifications",
     "defaultValue": true
   },

@@ -36,7 +36,7 @@ Semua preferensi dapat diatur melalui pengaturan mod (Sine / Zen Mods).
 
 ### Notifications
 
-- **Hide update notifications** — sembunyikan popup seperti “Update available”. Default: aktif. Nonaktifkan checkbox untuk menampilkan popup kembali. Pemeriksaan dan instalasi update tetap berjalan; notifikasi lain tidak disembunyikan.
+- **Hide update notifications & menu badge** — sembunyikan popup seperti “Update available” dan badge update pada tombol menu Zen. Default: aktif. Nonaktifkan checkbox untuk menampilkan keduanya kembali. Pemeriksaan dan instalasi update tetap berjalan; notifikasi dan badge selain update tidak disembunyikan.
 - Preferensi: `mod.zenmodme.hide-update-notifications`.
 
 ### Workspace
