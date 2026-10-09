@@ -83,6 +83,16 @@
   },
   {
     "type": "separator",
+    "label": "NOTIFICATIONS"
+  },
+  {
+    "type": "checkbox",
+    "label": "Hide *update notifications* (~update checks & installation stay enabled~).",
+    "property": "mod.zenmodme.hide-update-notifications",
+    "defaultValue": true
+  },
+  {
+    "type": "separator",
     "label": "WORKSPACE"
   },
   {

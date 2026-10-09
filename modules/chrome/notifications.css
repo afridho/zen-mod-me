@@ -1,0 +1,6 @@
+/* Hide browser update popups without disabling update checks or installs. */
+@media -moz-pref("mod.zenmodme.hide-update-notifications") {
+  [id^="appMenu-update-"][id$="-notification"] {
+    display: none !important;
+  }
+}

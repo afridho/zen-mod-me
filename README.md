@@ -9,6 +9,7 @@ Mod personal untuk [Zen Browser](https://zen-browser.app/), berbasis fitur-fitur
 3. **Arc Menu Icon** — menampilkan Arc icon pada hamburger menu button.
 4. **Faded Unloaded Tabs** — fade effect pada tab yang belum dimuat, opsional dengan grayscale.
 5. **Workspace Icon Animation** — animasi ala macOS dock pada workspace indicator di bawah sidebar.
+6. **Hide Update Notifications** — menyembunyikan popup update browser tanpa menonaktifkan pemeriksaan atau instalasi update.
 
 ## Preferensi
 
@@ -32,6 +33,11 @@ Semua preferensi dapat diatur melalui pengaturan mod (Sine / Zen Mods).
 - **Arc menu icon** — tampilkan Arc icon pada hamburger button. Default: nonaktif.
 - **Fade unloaded tabs** — buat tab yang belum dimuat tampak fade. Default: nonaktif.
 - **Grayscale unloaded tabs** — tambah grayscale pada tab yang fade (butuh fade aktif). Default: nonaktif.
+
+### Notifications
+
+- **Hide update notifications** — sembunyikan popup seperti “Update available”. Default: aktif. Nonaktifkan checkbox untuk menampilkan popup kembali. Pemeriksaan dan instalasi update tetap berjalan; notifikasi lain tidak disembunyikan.
+- Preferensi: `mod.zenmodme.hide-update-notifications`.
 
 ### Workspace
 
@@ -59,6 +65,7 @@ Restart Zen setelahnya.
   - `tab-styles.css` — faded unloaded tabs & tab border radius.
   - `workspace-buttons.css` — styling & animasi workspace indicator.
   - `pip.css` — custom Picture-in-Picture styling.
+  - `notifications.css` — toggle untuk menyembunyikan popup update browser.
 - `preferences.json` — daftar preferensi mod (format Sine-compatible).
 - `theme.json` — metadata mod dan referensi file.
 - `README.md` — dokumentasi ini.
