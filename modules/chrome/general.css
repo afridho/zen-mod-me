@@ -55,11 +55,24 @@ toolbarbutton.subviewbutton {
   border-radius: var(--arc-border-radius, 12px) !important;
 }
 
-/* Bleeding corners fix — clip content to the rounded inner radius */
-/* Source: https://github.com/zen-themes/bleeding-corners-fix */
+/* Bleeding corners fix — clip content to the rounded inner radius.
+ * We clip on the container (anti-aliased border-radius + overflow) instead of
+ * applying clip-path directly on <browser>. A clip-path on the GPU-composited
+ * content layer is rasterized without anti-aliasing, which makes the rounded
+ * corners look jagged/stair-stepped.
+ * Source: https://github.com/zen-themes/bleeding-corners-fix
+ */
 html:not([sizemode="fullscreen"]) {
   .browserStack,
+  .browserSidebarContainer:not([is-zen-split="true"]) {
+    border-radius: var(--zen-native-inner-radius) !important;
+    overflow: clip !important;
+  }
+
+  /* The <browser> itself only gets a matching radius, never a clip-path,
+   * so the content layer stays anti-aliased by the container clip above. */
   browser {
-    clip-path: inset(0 round var(--zen-native-inner-radius));
+    border-radius: var(--zen-native-inner-radius) !important;
+    clip-path: none !important;
   }
 }
