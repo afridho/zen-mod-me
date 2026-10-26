@@ -32,7 +32,8 @@
   #tabbrowser-tabpanels > .browserSidebarContainer,
   .browserSidebarContainer:not([is-zen-split="true"]),
   .browserSidebarContainer:not([is-zen-split="true"]) .browserContainer {
-    border-radius: var(--mod-zenmodme-webview-radius, 12px) !important;
+    /* Top corners only; the bottom stays square. */
+    border-radius: var(--mod-zenmodme-webview-radius, 12px) var(--mod-zenmodme-webview-radius, 12px) 0 0 !important;
   }
 }
 
@@ -55,24 +56,48 @@ toolbarbutton.subviewbutton {
   border-radius: var(--arc-border-radius, 12px) !important;
 }
 
-/* Bleeding corners fix — clip content to the rounded inner radius.
- * We clip on the container (anti-aliased border-radius + overflow) instead of
- * applying clip-path directly on <browser>. A clip-path on the GPU-composited
- * content layer is rasterized without anti-aliasing, which makes the rounded
- * corners look jagged/stair-stepped.
+/* Rounded content corners, anti-aliased.
+ *
+ * On Wayland (and X11 compositing), a border-radius or clip-path applied to the
+ * <browser> content layer is clipped hard-edged by the GPU compositor, so the
+ * corners look jagged/stair-stepped no matter which element we clip.
+ *
+ * A CSS mask is rasterized by Gecko's own paint pipeline, which IS
+ * anti-aliased, so we shape the corners with a rounded-rect SVG mask instead of
+ * a geometric clip. The radius is driven by --zen-native-inner-radius.
  * Source: https://github.com/zen-themes/bleeding-corners-fix
  */
 html:not([sizemode="fullscreen"]) {
-  .browserStack,
   .browserSidebarContainer:not([is-zen-split="true"]) {
-    border-radius: var(--zen-native-inner-radius) !important;
+    --zmm-r: var(--zen-native-inner-radius);
+    /* Edge feather width; ~1px gives a smooth anti-aliased curve. */
+    --zmm-aa: 1px;
+    border-radius: var(--zmm-r) var(--zmm-r) 0 0 !important;
+    /* Top corners only: two quarter-circle tiles + two rects for the body. */
+    mask-image:
+      radial-gradient(circle var(--zmm-r) at 100% 100%, #000 calc(var(--zmm-r) - var(--zmm-aa)), transparent var(--zmm-r)),
+      radial-gradient(circle var(--zmm-r) at 0 100%, #000 calc(var(--zmm-r) - var(--zmm-aa)), transparent var(--zmm-r)),
+      linear-gradient(#000, #000),
+      linear-gradient(#000, #000) !important;
+    mask-size:
+      var(--zmm-r) var(--zmm-r),
+      var(--zmm-r) var(--zmm-r),
+      calc(100% - var(--zmm-r) * 2) var(--zmm-r),
+      100% calc(100% - var(--zmm-r)) !important;
+    mask-position:
+      top left,
+      top right,
+      top center,
+      bottom left !important;
+    mask-repeat: no-repeat !important;
     overflow: clip !important;
   }
 
-  /* The <browser> itself only gets a matching radius, never a clip-path,
-   * so the content layer stays anti-aliased by the container clip above. */
+  /* The content element must not re-clip itself, or it fights the mask above. */
+  .browserStack,
   browser {
-    border-radius: var(--zen-native-inner-radius) !important;
+    border-radius: var(--zen-native-inner-radius) var(--zen-native-inner-radius) 0 0 !important;
     clip-path: none !important;
+    mask-image: none !important;
   }
 }
