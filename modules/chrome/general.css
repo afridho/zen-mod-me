@@ -32,8 +32,7 @@
   #tabbrowser-tabpanels > .browserSidebarContainer,
   .browserSidebarContainer:not([is-zen-split="true"]),
   .browserSidebarContainer:not([is-zen-split="true"]) .browserContainer {
-    /* Top corners only; the bottom stays square. */
-    border-radius: var(--mod-zenmodme-webview-radius, 12px) var(--mod-zenmodme-webview-radius, 12px) 0 0 !important;
+    border-radius: var(--mod-zenmodme-webview-radius, 12px) !important;
   }
 }
 
@@ -72,23 +71,29 @@ html:not([sizemode="fullscreen"]) {
     --zmm-r: var(--zen-native-inner-radius);
     /* Edge feather width; ~1px gives a smooth anti-aliased curve. */
     --zmm-aa: 1px;
-    border-radius: var(--zmm-r) var(--zmm-r) 0 0 !important;
-    /* Top corners only: two quarter-circle tiles + two rects for the body. */
+    border-radius: var(--zmm-r) !important;
+    /* Four quarter-circle corner tiles + two crossing rects for the body. */
     mask-image:
       radial-gradient(circle var(--zmm-r) at 100% 100%, #000 calc(var(--zmm-r) - var(--zmm-aa)), transparent var(--zmm-r)),
       radial-gradient(circle var(--zmm-r) at 0 100%, #000 calc(var(--zmm-r) - var(--zmm-aa)), transparent var(--zmm-r)),
+      radial-gradient(circle var(--zmm-r) at 100% 0, #000 calc(var(--zmm-r) - var(--zmm-aa)), transparent var(--zmm-r)),
+      radial-gradient(circle var(--zmm-r) at 0 0, #000 calc(var(--zmm-r) - var(--zmm-aa)), transparent var(--zmm-r)),
       linear-gradient(#000, #000),
       linear-gradient(#000, #000) !important;
     mask-size:
       var(--zmm-r) var(--zmm-r),
       var(--zmm-r) var(--zmm-r),
-      calc(100% - var(--zmm-r) * 2) var(--zmm-r),
-      100% calc(100% - var(--zmm-r)) !important;
+      var(--zmm-r) var(--zmm-r),
+      var(--zmm-r) var(--zmm-r),
+      calc(100% - var(--zmm-r) * 2) 100%,
+      100% calc(100% - var(--zmm-r) * 2) !important;
     mask-position:
       top left,
       top right,
-      top center,
-      bottom left !important;
+      bottom left,
+      bottom right,
+      center,
+      center !important;
     mask-repeat: no-repeat !important;
     overflow: clip !important;
   }
@@ -96,7 +101,7 @@ html:not([sizemode="fullscreen"]) {
   /* The content element must not re-clip itself, or it fights the mask above. */
   .browserStack,
   browser {
-    border-radius: var(--zen-native-inner-radius) var(--zen-native-inner-radius) 0 0 !important;
+    border-radius: var(--zen-native-inner-radius) !important;
     clip-path: none !important;
     mask-image: none !important;
   }
